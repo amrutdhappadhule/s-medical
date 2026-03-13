@@ -245,36 +245,47 @@ const HomePage = () => {
               >
                 {[
                   { val: "1000+", label: "Medicines" },
-                  { val: "5000+", label: "Happy Customers" },
-                  { val: "10+", label: "Years Experience" },
+                  { val: "500+", label: "Happy Customers" },
+                  { val: "2+", label: "Years Experience" },
                   { val: "100%", label: "Genuine Products" },
                 ].map((stat) => (
                   <Paper
                     key={stat.val}
                     sx={{
-                      p: 2.5,
-                      borderRadius: 3,
+                      p: 3,
+                      borderRadius: 2,
                       textAlign: "center",
-                      bgcolor: "rgba(255,255,255,0.12)",
-                      backdropFilter: "blur(10px)",
-                      border: "1px solid rgba(255,255,255,0.15)",
+                      background: "rgba(255,255,255,0.10)",
+                      backdropFilter: "blur(12px)",
+                      border: "1px solid rgba(255,255,255,0.2)",
+                      transition: "all 0.25s ease",
+                      cursor: "default",
+
+                      "&:hover": {
+                        transform: "translateY(-4px)",
+                        background: "rgba(255,255,255,0.15)",
+                        boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
+                      },
                     }}
                   >
                     <Typography
                       sx={{
-                        fontFamily: "Sora",
                         fontWeight: 800,
-                        fontSize: 28,
+                        fontSize: 32,
+                        letterSpacing: 0.5,
                         color: "#A5F3FC",
+                        mb: 0.5,
                       }}
                     >
                       {stat.val}
                     </Typography>
+
                     <Typography
                       sx={{
                         fontSize: 13,
-                        color: "rgba(255,255,255,0.8)",
                         fontWeight: 500,
+                        color: "rgba(255,255,255,0.85)",
+                        letterSpacing: 0.3,
                       }}
                     >
                       {stat.label}
@@ -288,47 +299,68 @@ const HomePage = () => {
       </Box>
 
       {/* Features strip */}
-      <Box sx={{ bgcolor: "white", borderBottom: "1px solid #E8ECF0" }}>
+      <Box sx={{ bgcolor: "white", borderBottom: "1px solid #E8ECF0", mt: 4 }}>
         <Container maxWidth="lg">
-          <Grid container>
-            {features.map((f, i) => (
-              <Grid item xs={6} md={3} key={f.title}>
+          <Grid container spacing={2}>
+            {features.map((f) => (
+              <Grid item xs={12} sm={6} md={3} key={f.title}>
                 <Box
                   sx={{
-                    py: 2.5,
-                    px: 2,
                     display: "flex",
                     alignItems: "center",
-                    gap: 1.5,
-                    borderRight: i < 3 ? "1px solid #E8ECF0" : "none",
-                    borderBottom: {
-                      xs: i < 2 ? "1px solid #E8ECF0" : "none",
-                      md: "none",
+                    gap: 2,
+                    p: 2,
+                    borderRadius: 3,
+                    bgcolor: "#c0ffcc",
+                    border: "1px solid #EEF2F6",
+                    transition: "all 0.25s ease",
+                    height: "100%",
+
+                    "&:hover": {
+                      transform: "translateY(-3px)",
+                      boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
+                      bgcolor: "#c0ffcc",
                     },
                   }}
                 >
+                  {/* Icon */}
                   <Box
                     sx={{
-                      width: 40,
-                      height: 40,
-                      borderRadius: 2,
-                      bgcolor: "#F0FBF8",
+                      width: 44,
+                      height: 44,
+                      borderRadius: "50%",
+                      bgcolor: "#E8F8F3",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       color: "primary.main",
                       flexShrink: 0,
+                      fontSize: 20,
                     }}
                   >
                     {f.icon}
                   </Box>
+
+                  {/* Text */}
                   <Box>
                     <Typography
-                      sx={{ fontWeight: 700, fontSize: 13, color: "#1A1A2E" }}
+                      sx={{
+                        fontWeight: 700,
+                        fontSize: 14,
+                        color: "#1A1A2E",
+                        mb: 0.2,
+                      }}
                     >
                       {f.title}
                     </Typography>
-                    <Typography sx={{ fontSize: 11, color: "text.secondary" }}>
+
+                    <Typography
+                      sx={{
+                        fontSize: 12,
+                        color: "#6B7280",
+                        lineHeight: 1.4,
+                      }}
+                    >
                       {f.desc}
                     </Typography>
                   </Box>
@@ -340,37 +372,57 @@ const HomePage = () => {
       </Box>
 
       {/* Categories */}
-      <Container maxWidth="lg" sx={{ py: 6 }}>
+      <Container maxWidth="lg" sx={{ py: 7 }}>
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            mb: 3,
+            mb: 4,
           }}
         >
           <Box>
             <Typography
               variant="h4"
-              sx={{ fontWeight: 700, fontSize: { xs: 20, md: 24 } }}
+              sx={{
+                fontWeight: 700,
+                fontSize: { xs: 20, md: 26 },
+                color: "#111827",
+              }}
             >
               Shop by Category
             </Typography>
-            <Typography color="text.secondary" sx={{ mt: 0.5, fontSize: 14 }}>
+
+            <Typography
+              sx={{
+                mt: 0.5,
+                fontSize: 14,
+                color: "#6B7280",
+              }}
+            >
               Find medicines by their category
             </Typography>
           </Box>
+
           <Button
             component={Link}
             to="/medicines"
             endIcon={<ArrowForwardIcon />}
-            sx={{ fontWeight: 600 }}
+            sx={{
+              fontWeight: 600,
+              color: "primary.main",
+              textTransform: "none",
+              "&:hover": {
+                bgcolor: "transparent",
+                textDecoration: "underline",
+              },
+            }}
           >
             View All
           </Button>
         </Box>
 
-        <Grid container spacing={2}>
+        <Grid container spacing={2.5}>
           {categories.map((cat) => (
             <Grid item xs={6} sm={3} md={1.5} key={cat.name}>
               <Card
@@ -378,22 +430,47 @@ const HomePage = () => {
                 sx={{
                   textAlign: "center",
                   cursor: "pointer",
-                  p: 1,
+                  borderRadius: 4,
+                  p: 2,
                   bgcolor: cat.color,
-                  border: `1px solid ${cat.color}`,
-                  boxShadow: "none",
+                  border: "1px solid rgba(0,0,0,0.05)",
+                  boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
+                  transition: "all 0.25s ease",
+
                   "&:hover": {
-                    transform: "translateY(-4px)",
-                    boxShadow: "0 8px 24px rgba(0,0,0,0.1)",
+                    transform: "translateY(-6px)",
+                    boxShadow: "0 14px 30px rgba(0,0,0,0.12)",
                   },
                 }}
               >
-                <CardContent sx={{ p: "12px !important" }}>
-                  <Typography sx={{ fontSize: 32, mb: 0.5 }}>
+                <CardContent sx={{ p: "10px !important" }}>
+                  {/* Icon Circle */}
+                  <Box
+                    sx={{
+                      width: 56,
+                      height: 56,
+                      borderRadius: "50%",
+                      bgcolor: "rgba(255,255,255,0.75)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      mx: "auto",
+                      mb: 1.5,
+                      fontSize: 28,
+                      transition: "all 0.25s",
+                    }}
+                  >
                     {cat.icon}
-                  </Typography>
+                  </Box>
+
+                  {/* Category Name */}
                   <Typography
-                    sx={{ fontSize: 12, fontWeight: 600, color: cat.textColor }}
+                    sx={{
+                      fontSize: 13,
+                      fontWeight: 600,
+                      color: cat.textColor,
+                      letterSpacing: 0.2,
+                    }}
                   >
                     {cat.name}
                   </Typography>
@@ -518,7 +595,7 @@ const HomePage = () => {
       {/* WhatsApp floating button */}
       <Box
         component="a"
-        href="https://wa.me/919876543210?text=Hello, I need help with medicine ordering"
+        href="https://wa.me/917666331044?text=Hello, I need help with medicine ordering"
         target="_blank"
         sx={{
           position: "fixed",
@@ -611,7 +688,7 @@ const HomePage = () => {
           {/* WhatsApp Button */}
           <Button
             component="a"
-            href="https://wa.me/919876543210?text=Hello%20Swami%20Medical,%20I%20want%20to%20order%20medicines%20using%20my%20prescription."
+            href="https://wa.me/917666331044?text=Hello%20Swami%20Medical,%20I%20want%20to%20order%20medicines%20using%20my%20prescription."
             target="_blank"
             fullWidth
             startIcon={<WhatsAppIcon />}
