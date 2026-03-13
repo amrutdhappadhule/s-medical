@@ -57,6 +57,7 @@ const medicines = [
     batchNumber: "B001",
     expiryDate: new Date("2026-06-30"),
     description: "For fever and mild to moderate pain relief",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/822/822143.png",
   },
   {
     name: "Azithromycin 500mg",
@@ -69,6 +70,7 @@ const medicines = [
     batchNumber: "B002",
     expiryDate: new Date("2025-12-31"),
     description: "Antibiotic for bacterial infections",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/4320/4320337.png",
   },
   {
     name: "Pan D Capsule",
@@ -81,6 +83,7 @@ const medicines = [
     batchNumber: "B003",
     expiryDate: new Date("2026-03-31"),
     description: "For acidity, heartburn and gastric reflux",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/2966/2966481.png",
   },
   {
     name: "Cetirizine 10mg",
@@ -93,6 +96,7 @@ const medicines = [
     batchNumber: "B004",
     expiryDate: new Date("2026-08-31"),
     description: "Antihistamine for allergy relief",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/3774/3774299.png",
   },
   {
     name: "Amoxicillin 500mg",
@@ -105,6 +109,7 @@ const medicines = [
     batchNumber: "B005",
     expiryDate: new Date("2025-11-30"),
     description: "Broad-spectrum antibiotic",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/4320/4320337.png",
   },
   {
     name: "Himalaya Septilin Syrup",
@@ -117,6 +122,7 @@ const medicines = [
     batchNumber: "B006",
     expiryDate: new Date("2026-02-28"),
     description: "Herbal immunity booster",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/822/822143.png",
   },
   {
     name: "Betadine Solution",
@@ -129,6 +135,7 @@ const medicines = [
     batchNumber: "B007",
     expiryDate: new Date("2026-04-30"),
     description: "Antiseptic solution for wound care",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/2966/2966481.png",
   },
   {
     name: "Vitamin D3 Sachet",
@@ -141,6 +148,7 @@ const medicines = [
     batchNumber: "B008",
     expiryDate: new Date("2026-10-31"),
     description: "Weekly vitamin D supplement",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/822/822143.png",
   },
   {
     name: "Metformin 500mg",
@@ -153,6 +161,7 @@ const medicines = [
     batchNumber: "B009",
     expiryDate: new Date("2026-05-31"),
     description: "For type 2 diabetes management",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/4320/4320337.png",
   },
   {
     name: "Atorvastatin 10mg",
@@ -165,6 +174,7 @@ const medicines = [
     batchNumber: "B010",
     expiryDate: new Date("2025-09-30"),
     description: "For cholesterol management",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/4320/4320337.png",
   },
   {
     name: "Dolo 650mg",
@@ -177,6 +187,7 @@ const medicines = [
     batchNumber: "B011",
     expiryDate: new Date("2026-07-31"),
     description: "Fever and pain relief - higher strength",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/822/822143.png",
   },
   {
     name: "Allegra 120mg",
@@ -189,6 +200,7 @@ const medicines = [
     batchNumber: "B012",
     expiryDate: new Date("2026-01-31"),
     description: "Non-drowsy antihistamine for allergies",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/3774/3774299.png",
   },
   {
     name: "Volini Gel 30g",
@@ -201,6 +213,7 @@ const medicines = [
     batchNumber: "B013",
     expiryDate: new Date("2026-06-30"),
     description: "Pain relief gel for muscles and joints",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/2966/2966481.png",
   },
   {
     name: "Glucometer OneTouch",
@@ -213,6 +226,7 @@ const medicines = [
     batchNumber: "B014",
     expiryDate: new Date("2028-12-31"),
     description: "Digital blood glucose monitoring device",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/2966/2966481.png",
   },
   {
     name: "ENO Fruit Salt",
@@ -225,6 +239,7 @@ const medicines = [
     batchNumber: "B015",
     expiryDate: new Date("2026-03-31"),
     description: "Fast relief from acidity and indigestion",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/4320/4320337.png",
   },
   {
     name: "ORS Electrolyte",
@@ -237,6 +252,7 @@ const medicines = [
     batchNumber: "B016",
     expiryDate: new Date("2027-01-31"),
     description: "Oral rehydration salts for dehydration",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/822/822143.png",
   },
   {
     name: "B-Complex Tablets",
@@ -249,6 +265,7 @@ const medicines = [
     batchNumber: "B017",
     expiryDate: new Date("2026-11-30"),
     description: "Complete B-complex vitamin supplement",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/822/822143.png",
   },
   {
     name: "Omez 20mg",
@@ -261,6 +278,7 @@ const medicines = [
     batchNumber: "B018",
     expiryDate: new Date("2026-04-30"),
     description: "Proton pump inhibitor for acid reflux",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/2966/2966481.png",
   },
 ];
 
