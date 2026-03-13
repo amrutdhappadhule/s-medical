@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #00856F;
+  --primary-light: #00A98A;
+  --secondary: #FF6B35;
+  --bg: #F5F7FA;
+  --white: #FFFFFF;
+  --text: #1A1A2E;
+  --text-muted: #5C6370;
+  --border: #E8ECF0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #a8a8a8; }
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.fade-in-up { animation: fadeInUp 0.4s ease forwards; }
+.fade-in { animation: fadeIn 0.3s ease forwards; }
+
+/* Page container */
+.page-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Section spacing */
+.section-spacing {
+  padding: 48px 0;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #00856F 0%, #00A98A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Badge */
+.rx-badge {
+  background: linear-gradient(135deg, #E53935, #EF5350);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* Status chips */
+.status-placed { background: #E3F2FD; color: #1565C0; }
+.status-preparing { background: #FFF8E1; color: #F57F17; }
+.status-ready { background: #F3E5F5; color: #6A1B9A; }
+.status-delivered { background: #E8F5E9; color: #2E7D32; }
+.status-cancelled { background: #FFEBEE; color: #B71C1C; }

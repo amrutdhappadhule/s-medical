@@ -1,0 +1,117 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #1a9e5e;
+  --primary-dark: #137a49;
+  --primary-light: #e8f7f1;
+  --accent: #ff6b35;
+  --text-primary: #1a1a2e;
+  --text-secondary: #5a5a7a;
+  --bg: #f8fafc;
+  --white: #ffffff;
+  --border: #e8eaf0;
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #c5c5d5; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #a0a0b5; }
+
+/* Medicine card hover effect */
+.medicine-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.medicine-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(26, 158, 94, 0.15) !important;
+}
+
+/* Smooth page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Category pill */
+.category-pill {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.category-pill:hover, .category-pill.active {
+  background: var(--primary) !important;
+  color: white !important;
+}
+
+/* Prescription badge */
+.rx-badge {
+  background: linear-gradient(135deg, #ff6b35, #ff4500);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* Green badge */
+.otc-badge {
+  background: linear-gradient(135deg, #1a9e5e, #0d7a47);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Loading skeleton */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, #0d7a47 0%, #1a9e5e 40%, #25c278 100%);
+}
+
+/* Status badges */
+.status-placed { background: #fff3e0; color: #e65100; }
+.status-confirmed { background: #e3f2fd; color: #1565c0; }
+.status-preparing { background: #f3e5f5; color: #6a1b9a; }
+.status-ready { background: #e8f5e9; color: #1b5e20; }
+.status-delivered { background: #e8f5e9; color: #1b5e20; }
+.status-cancelled { background: #ffebee; color: #b71c1c; }
+.status-out_for_delivery { background: #e8f5e9; color: #1b5e20; }
+
+.status-pending { background: #fff3e0; color: #e65100; }
+.status-approved { background: #e8f5e9; color: #1b5e20; }
+.status-rejected { background: #ffebee; color: #b71c1c; }
