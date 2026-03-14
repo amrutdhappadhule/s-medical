@@ -138,69 +138,83 @@
 //   )
 // }
 
-
-
-
-
-
-
-
-
-
-import React, { useState } from 'react'
-import { Link, useNavigate, useLocation } from 'react-router-dom'
+import React, { useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
-  AppBar, Toolbar, Box, Typography, IconButton, Badge,
-  Avatar, Menu, MenuItem, Divider, Button,
-  Drawer, List, ListItem, ListItemIcon, ListItemText, useMediaQuery, useTheme
-} from '@mui/material'
+  AppBar,
+  Toolbar,
+  Box,
+  Typography,
+  IconButton,
+  Badge,
+  Avatar,
+  Menu,
+  MenuItem,
+  Divider,
+  Button,
+  Drawer,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import {
-  ShoppingCart, Person, Logout, Receipt,
-  UploadFile, Menu as MenuIcon, Home, MedicalServices,
-  Dashboard, Store, Close, LocalPharmacy
-} from '@mui/icons-material'
-import { useAuthStore } from '../../store/authStore'
-import { useCartStore } from '../../store/cartStore'
+  ShoppingCart,
+  Person,
+  Logout,
+  Receipt,
+  UploadFile,
+  Menu as MenuIcon,
+  Home,
+  MedicalServices,
+  Dashboard,
+  Store,
+  Close,
+  LocalPharmacy,
+} from "@mui/icons-material";
+import { useAuthStore } from "../../store/authStore";
+import { useCartStore } from "../../store/cartStore";
 
 export default function Navbar() {
-  const navigate = useNavigate()
-  const location = useLocation()
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'))
-  const { user, isAuthenticated, isAdmin, logout } = useAuthStore()
-  const totalItems = useCartStore((s) => s.totalItems)
+  const navigate = useNavigate();
+  const location = useLocation();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const { user, isAuthenticated, isAdmin, logout } = useAuthStore();
+  const totalItems = useCartStore((s) => s.totalItems);
 
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Home', path: '/', icon: <Home /> },
-    { label: 'Medicines', path: '/medicines', icon: <MedicalServices /> },
-    { label: 'Store', path: '/store', icon: <Store /> },
-  ]
+    { label: "Home", path: "/", icon: <Home /> },
+    { label: "Medicines", path: "/medicines", icon: <MedicalServices /> },
+    { label: "Store", path: "/store", icon: <Store /> },
+  ];
 
   return (
     <>
       <AppBar
         position="sticky"
         sx={{
-          background: '#fff',
-          color: 'text.primary',
-          borderBottom: '1px solid',
-          borderColor: 'divider'
+          background: "#fff",
+          color: "text.primary",
+          borderBottom: "1px solid",
+          borderColor: "divider",
         }}
         elevation={0}
       >
         <Toolbar
           sx={{
             maxWidth: 1280,
-            width: '100%',
-            mx: 'auto',
+            width: "100%",
+            mx: "auto",
             px: { xs: 1, md: 2 },
-            minHeight: '64px !important'
+            minHeight: "64px !important",
           }}
         >
-
           {/* Mobile Menu Button */}
           {isMobile && (
             <IconButton onClick={() => setMobileOpen(true)} sx={{ mr: 1 }}>
@@ -213,26 +227,26 @@ export default function Navbar() {
             component={Link}
             to="/"
             sx={{
-              display: 'flex',
-              alignItems: 'center',
+              display: "flex",
+              alignItems: "center",
               gap: 1,
-              textDecoration: 'none',
+              textDecoration: "none",
               mr: 3,
-              flexShrink: 0
+              flexShrink: 0,
             }}
           >
             <Box
               sx={{
                 width: 36,
                 height: 36,
-                borderRadius: '10px',
-                background: 'linear-gradient(135deg, #1a9e5e, #137a49)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
+                borderRadius: "10px",
+                background: "linear-gradient(135deg, #1a9e5e, #137a49)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
-              <LocalPharmacy sx={{ color: 'white', fontSize: 20 }} />
+              <LocalPharmacy sx={{ color: "white", fontSize: 20 }} />
             </Box>
 
             <Box>
@@ -240,9 +254,9 @@ export default function Navbar() {
                 variant="h6"
                 sx={{
                   fontWeight: 800,
-                  color: 'primary.main',
+                  color: "primary.main",
                   lineHeight: 1,
-                  fontSize: '16px'
+                  fontSize: "16px",
                 }}
               >
                 Swami Medical
@@ -251,8 +265,8 @@ export default function Navbar() {
               <Typography
                 variant="caption"
                 sx={{
-                  color: 'text.secondary',
-                  fontSize: '10px'
+                  color: "text.secondary",
+                  fontSize: "10px",
                 }}
               >
                 Smart Pharmacy
@@ -265,18 +279,18 @@ export default function Navbar() {
             <Box
               sx={{
                 flex: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 gap: 2,
-                ml: 2
+                ml: 2,
               }}
             >
               <Typography
                 sx={{
-                  fontSize: '14px',
+                  fontSize: "14px",
                   fontWeight: 600,
-                  color: 'text.secondary'
+                  color: "text.secondary",
                 }}
               >
                 Order anywhere from <b>Solapur</b>
@@ -288,10 +302,10 @@ export default function Navbar() {
                 variant="contained"
                 size="small"
                 sx={{
-                  textTransform: 'none',
-                  borderRadius: '20px',
+                  textTransform: "none",
+                  borderRadius: "20px",
                   px: 2,
-                  fontSize: '13px'
+                  fontSize: "13px",
                 }}
               >
                 Call Now
@@ -301,7 +315,7 @@ export default function Navbar() {
 
           {/* Navigation Links */}
           {!isMobile && (
-            <Box sx={{ display: 'flex', gap: 0.5, mx: 1 }}>
+            <Box sx={{ display: "flex", gap: 0.5, mx: 1 }}>
               {navLinks.map((link) => (
                 <Button
                   key={link.path}
@@ -310,12 +324,11 @@ export default function Navbar() {
                   sx={{
                     color:
                       location.pathname === link.path
-                        ? 'primary.main'
-                        : 'text.secondary',
-                    fontWeight:
-                      location.pathname === link.path ? 700 : 500,
-                    fontSize: '13px',
-                    px: 1.5
+                        ? "primary.main"
+                        : "text.secondary",
+                    fontWeight: location.pathname === link.path ? 700 : 500,
+                    fontSize: "13px",
+                    px: 1.5,
                   }}
                 >
                   {link.label}
@@ -327,10 +340,10 @@ export default function Navbar() {
                   component={Link}
                   to="/admin"
                   sx={{
-                    color: 'secondary.main',
+                    color: "secondary.main",
                     fontWeight: 600,
-                    fontSize: '13px',
-                    px: 1.5
+                    fontSize: "13px",
+                    px: 1.5,
                   }}
                 >
                   Dashboard
@@ -340,21 +353,18 @@ export default function Navbar() {
           )}
 
           {/* Cart */}
-          {isAuthenticated && (
-            <IconButton component={Link} to="/cart" sx={{ ml: 1 }}>
-              <Badge badgeContent={totalItems} color="primary">
-                <ShoppingCart
-                  sx={{
-                    color:
-                      totalItems > 0
-                        ? 'primary.main'
-                        : 'text.secondary',
-                    fontSize: 22
-                  }}
-                />
-              </Badge>
-            </IconButton>
-          )}
+          {/* {isAuthenticated && ( */}
+          <IconButton component={Link} to="/cart" sx={{ ml: 1 }}>
+            <Badge badgeContent={totalItems} color="primary">
+              <ShoppingCart
+                sx={{
+                  color: totalItems > 0 ? "primary.main" : "text.secondary",
+                  fontSize: 22,
+                }}
+              />
+            </Badge>
+          </IconButton>
+          {/* )} */}
 
           {/* User Menu */}
           {isAuthenticated ? (
@@ -367,9 +377,9 @@ export default function Navbar() {
                   sx={{
                     width: 34,
                     height: 34,
-                    bgcolor: 'primary.main',
+                    bgcolor: "primary.main",
                     fontSize: 14,
-                    fontWeight: 700
+                    fontWeight: 700,
                   }}
                 >
                   {user?.name?.[0]?.toUpperCase()}
@@ -385,11 +395,11 @@ export default function Navbar() {
                     borderRadius: 2,
                     mt: 1,
                     minWidth: 200,
-                    boxShadow: '0 8px 32px rgba(0,0,0,0.12)'
-                  }
+                    boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
+                  },
                 }}
-                transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                transformOrigin={{ horizontal: "right", vertical: "top" }}
+                anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
               >
                 <Box sx={{ px: 2, py: 1.5 }}>
                   <Typography variant="subtitle2" fontWeight={700}>
@@ -404,8 +414,8 @@ export default function Navbar() {
 
                 <MenuItem
                   onClick={() => {
-                    navigate('/profile')
-                    setAnchorEl(null)
+                    navigate("/profile");
+                    setAnchorEl(null);
                   }}
                 >
                   <Person sx={{ mr: 1.5, fontSize: 18 }} /> My Profile
@@ -413,8 +423,8 @@ export default function Navbar() {
 
                 <MenuItem
                   onClick={() => {
-                    navigate('/orders')
-                    setAnchorEl(null)
+                    navigate("/orders");
+                    setAnchorEl(null);
                   }}
                 >
                   <Receipt sx={{ mr: 1.5, fontSize: 18 }} /> My Orders
@@ -422,8 +432,8 @@ export default function Navbar() {
 
                 <MenuItem
                   onClick={() => {
-                    navigate('/prescriptions')
-                    setAnchorEl(null)
+                    navigate("/prescriptions");
+                    setAnchorEl(null);
                   }}
                 >
                   <UploadFile sx={{ mr: 1.5, fontSize: 18 }} /> Prescriptions
@@ -434,21 +444,18 @@ export default function Navbar() {
                     <Divider />
                     <MenuItem
                       onClick={() => {
-                        navigate('/admin')
-                        setAnchorEl(null)
+                        navigate("/admin");
+                        setAnchorEl(null);
                       }}
                     >
                       <Dashboard
                         sx={{
                           mr: 1.5,
                           fontSize: 18,
-                          color: 'secondary.main'
+                          color: "secondary.main",
                         }}
                       />
-                      <Typography
-                        color="secondary.main"
-                        fontWeight={600}
-                      >
+                      <Typography color="secondary.main" fontWeight={600}>
                         Admin Panel
                       </Typography>
                     </MenuItem>
@@ -459,24 +466,24 @@ export default function Navbar() {
 
                 <MenuItem
                   onClick={() => {
-                    logout()
-                    setAnchorEl(null)
-                    navigate('/')
+                    logout();
+                    setAnchorEl(null);
+                    navigate("/");
                   }}
-                  sx={{ color: 'error.main' }}
+                  sx={{ color: "error.main" }}
                 >
                   <Logout sx={{ mr: 1.5, fontSize: 18 }} /> Logout
                 </MenuItem>
               </Menu>
             </>
           ) : (
-            <Box sx={{ display: 'flex', gap: 1, ml: 1 }}>
+            <Box sx={{ display: "flex", gap: 1, ml: 1 }}>
               <Button
                 component={Link}
                 to="/login"
                 variant="outlined"
                 size="small"
-                sx={{ fontSize: '13px' }}
+                sx={{ fontSize: "13px" }}
               >
                 Login
               </Button>
@@ -486,7 +493,7 @@ export default function Navbar() {
                 to="/register"
                 variant="contained"
                 size="small"
-                sx={{ fontSize: '13px' }}
+                sx={{ fontSize: "13px" }}
               >
                 Sign Up
               </Button>
@@ -505,9 +512,9 @@ export default function Navbar() {
         <Box
           sx={{
             p: 2,
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center'
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
           }}
         >
           <Typography variant="h6" fontWeight={800} color="primary.main">
@@ -529,14 +536,14 @@ export default function Navbar() {
               to={link.path}
               onClick={() => setMobileOpen(false)}
               sx={{
-                color: 'text.primary',
-                textDecoration: 'none'
+                color: "text.primary",
+                textDecoration: "none",
               }}
             >
               <ListItemIcon
                 sx={{
                   minWidth: 36,
-                  color: 'primary.main'
+                  color: "primary.main",
                 }}
               >
                 {link.icon}
@@ -548,5 +555,5 @@ export default function Navbar() {
         </List>
       </Drawer>
     </>
-  )
+  );
 }
